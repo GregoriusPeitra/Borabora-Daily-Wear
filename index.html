@@ -1,0 +1,1097 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Borabora Daily Wear — START YOUR DAY, IN YOUR OWN WAY.</title>
+  <meta name="description" content="Borabora Daily Wear menciptakan pakaian yang nyaman, timeless, dan serbaguna untuk kehidupan sehari-hari. Dibuat oleh pengrajin lokal Indonesia." />
+  <meta property="og:title" content="Borabora Daily Wear — START YOUR DAY, IN YOUR OWN WAY." />
+  <meta property="og:description" content="Brand fashion lokal Indonesia yang menghadirkan pakaian sehari-hari dengan filosofi kenyamanan adalah kepercayaan diri paling alami." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👗</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #F4EBD4;
+      --white: #FFFFFF;
+      --primary: #D8C5B3;
+      --secondary: #EDE4DA;
+      --accent: #A97C5A;
+      --text: #222222;
+      --subtext: #666666;
+      --border: #E8DED0;
+      --cream: #F8F3EC;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
+    }
+
+    .navbar-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 48px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo img {
+      height: 80px;
+      width: auto;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      list-style: none;
+    }
+
+    .nav-menu a {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text);
+      position: relative;
+      padding: 4px 0;
+      transition: color 0.3s ease;
+    }
+
+    .nav-menu a::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 1px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    .nav-menu a:hover { color: var(--accent); }
+    .nav-menu a:hover::after { width: 100%; }
+
+    .nav-actions { display: flex; align-items: center; gap: 16px; }
+
+    .btn-shop {
+      background: var(--text);
+      color: var(--white);
+      padding: 10px 24px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+    }
+
+    .btn-shop:hover { background: var(--accent); transform: scale(1.02); }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .mobile-toggle span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--text);
+      margin: 6px 0;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 80px; left: 0; right: 0; bottom: 0;
+      background: var(--bg);
+      z-index: 999;
+      padding: 40px 32px;
+      flex-direction: column;
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu a {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      font-weight: 500;
+      color: var(--text);
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mobile-menu .btn-shop {
+      margin-top: 32px;
+      text-align: center;
+      padding: 14px 32px;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: calc(100vh - 80px);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 100px 64px 48px calc(64px + (100vw - 1440px) / 2);
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+
+    .hero-title {
+      font-size: clamp(32px, 3.5vw, 52px);
+      font-weight: 500;
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+
+    .hero-subtitle {
+      font-size: 15px;
+      color: var(--subtext);
+      line-height: 1.7;
+      max-width: 380px;
+      margin-bottom: 28px;
+    }
+
+    .hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .btn-primary {
+      background: var(--text);
+      color: var(--white);
+      padding: 12px 28px;
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover { background: var(--accent); transform: translateY(-2px); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      padding: 12px 28px;
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1.5px solid var(--text);
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+    .hero-image {
+      position: relative;
+      overflow: hidden;
+      max-height: calc(100vh - 140px);
+      padding-top: 48px;
+    }
+
+    .hero-image img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      animation: heroFloat 7s ease-in-out infinite;
+    }
+
+    @keyframes heroFloat {
+      0%, 100% { transform: scale(1) translateY(0); }
+      50% { transform: scale(1.03) translateY(-10px); }
+    }
+
+    /* ===== SECTIONS ===== */
+    section { padding: 100px 48px; }
+
+    .section-title {
+      font-size: clamp(30px, 3vw, 46px);
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 16px;
+      color: var(--subtext);
+      max-width: 540px;
+      line-height: 1.7;
+    }
+
+    /* ===== ABOUT ===== */
+    .about {
+      max-width: 1440px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      padding: 100px 48px;
+    }
+
+    .about-image img,
+    .about-video {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .about-text { max-width: 500px; }
+    .about-text .section-title { margin-bottom: 20px; }
+    .about-text p { font-size: 16px; color: var(--subtext); line-height: 1.8; }
+
+    /* ===== COLLECTION ===== */
+    .collection {
+      max-width: 1440px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 100px 48px;
+    }
+
+    .collection-header { margin-bottom: 56px; }
+    .collection-header .section-title { margin-bottom: 10px; }
+
+    .collection-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .collection-card {
+      text-align: left;
+      overflow: hidden;
+      transition: transform 0.5s ease;
+    }
+
+    .collection-card:hover { transform: translateY(-8px); }
+
+    .collection-card-image {
+      width: 100%;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      margin-bottom: 16px;
+      position: relative;
+    }
+
+    .collection-card-image img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .collection-card:hover .collection-card-image img { transform: scale(1.05); }
+
+    .collection-badge {
+      position: absolute;
+      top: 14px; left: 14px;
+      background: var(--text);
+      color: var(--white);
+      padding: 5px 12px;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .collection-name {
+      font-size: 22px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .collection-colors {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .color-swatch {
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      border: 1px solid rgba(0,0,0,0.12);
+    }
+
+    .color-label {
+      font-size: 11px;
+      color: var(--subtext);
+    }
+
+    .collection-desc {
+      font-size: 13px;
+      color: var(--subtext);
+      margin-bottom: 14px;
+      line-height: 1.6;
+    }
+
+    .collection-link {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 2px;
+      transition: opacity 0.3s ease;
+    }
+
+    .collection-link:hover { opacity: 0.7; }
+
+    /* ===== MEANING ===== */
+    .meaning {
+      background: var(--primary);
+      text-align: center;
+      padding: 120px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .meaning-inner { max-width: 860px; margin: 0 auto; position: relative; z-index: 1; }
+
+    .meaning-quote-mark {
+      font-family: 'Playfair Display', serif;
+      font-size: 180px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1;
+      margin-bottom: -70px;
+    }
+
+    .meaning blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(26px, 3vw, 42px);
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.45;
+    }
+
+    /* ===== CRAFT ===== */
+    .craft {
+      max-width: 1440px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      padding: 100px 48px;
+    }
+
+    .craft-image img,
+    .craft-video { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 4px; }
+
+    .craft-text { max-width: 480px; }
+    .craft-text .section-title { margin-bottom: 20px; }
+    .craft-text p { font-size: 16px; color: var(--subtext); line-height: 1.8; }
+
+    /* ===== INSTAGRAM GALLERY ===== */
+    .gallery {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 100px 48px;
+      text-align: center;
+    }
+
+    .gallery .section-title { margin-bottom: 44px; }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 36px;
+    }
+
+    .gallery-item {
+      aspect-ratio: 1;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0);
+      transition: background 0.3s ease;
+    }
+
+    .gallery-item:hover img { transform: scale(1.08); }
+    .gallery-item:hover::after { background: rgba(0,0,0,0.15); }
+
+    .btn-follow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--text);
+      color: var(--white);
+      padding: 12px 28px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+    }
+
+    .btn-follow:hover { background: var(--accent); transform: translateY(-2px); }
+
+    /* ===== SIZE & FIT ===== */
+    .size {
+      padding: 100px 48px;
+      text-align: center;
+    }
+
+    .size-header { max-width: 600px; margin: 0 auto 48px; }
+    .size-header .section-title { margin-bottom: 16px; }
+    .size-desc { font-size: 16px; color: var(--subtext); line-height: 1.8; }
+
+    .size-image { max-width: 900px; margin: 0 auto; }
+    .size-image img { width: 100%; height: auto; border-radius: 4px; }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonials {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 100px 48px;
+      text-align: center;
+    }
+
+    .testimonials .section-title { margin-bottom: 56px; }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      padding: 32px 24px;
+      border-radius: 8px;
+      text-align: left;
+      border: 1px solid var(--border);
+    }
+
+    .testimonial-stars { display: flex; gap: 3px; margin-bottom: 18px; }
+    .star { color: var(--accent); font-size: 15px; }
+
+    .testimonial-text {
+      font-size: 14px;
+      color: var(--subtext);
+      line-height: 1.7;
+      margin-bottom: 22px;
+      font-style: italic;
+    }
+
+    .testimonial-author { display: flex; align-items: center; gap: 12px; }
+
+    .testimonial-avatar {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: var(--secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .testimonial-name { font-size: 14px; font-weight: 600; }
+    .testimonial-location { font-size: 12px; color: var(--subtext); }
+
+    /* ===== CTA ===== */
+    .cta {
+      position: relative;
+      min-height: 560px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .cta-bg {
+      position: absolute;
+      inset: 0;
+      background: url('mr68uvpj-IMG_5033.jpeg') center/cover no-repeat;
+    }
+
+    .cta-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(34, 34, 34, 0.55);
+    }
+
+    .cta-content { position: relative; z-index: 1; }
+
+    .cta .section-title {
+      font-size: clamp(34px, 5vw, 60px);
+      color: var(--white);
+      margin-bottom: 32px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer { background: var(--white); border-top: 1px solid var(--border); }
+
+    .footer-main {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 72px 48px 48px;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+      gap: 48px;
+    }
+
+    .footer-brand .nav-logo img { height: 72px; width: auto; }
+    .footer-brand p { font-size: 14px; color: var(--subtext); margin-top: 16px; line-height: 1.7; max-width: 260px; }
+
+    .footer-col h4 { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 500; margin-bottom: 18px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 10px; }
+    .footer-col a { font-size: 13px; color: var(--subtext); transition: color 0.2s ease; }
+    .footer-col a:hover { color: var(--accent); }
+
+    .footer-bottom {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 24px 48px;
+      border-top: 1px solid var(--border);
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-bottom p { font-size: 12px; color: var(--subtext); }
+
+    .footer-socials { display: flex; gap: 20px; }
+    .footer-socials a { font-size: 12px; color: var(--subtext); transition: color 0.2s ease; }
+    .footer-socials a:hover { color: var(--accent); }
+
+    /* ===== SCROLL REVEAL ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .navbar-inner { padding: 0 32px; }
+      section { padding: 80px 32px; }
+      .hero-text {
+        justify-content: flex-start;
+        padding: 80px 32px 48px;
+      }
+      .about, .craft { gap: 48px; }
+      .collection-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-main { grid-template-columns: 1fr 1fr 1fr; gap: 36px; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu, .nav-actions { display: none; }
+      .mobile-toggle { display: block; }
+      .navbar-inner { padding: 0 24px; }
+
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .hero-text {
+        justify-content: flex-start;
+        padding: 48px 24px 48px;
+        order: 2;
+      }
+
+      .hero-image {
+        order: 1;
+        height: 60vw;
+        min-height: 300px;
+      }
+
+      section { padding: 72px 24px; }
+
+      .about {
+        grid-template-columns: 1fr;
+        padding: 72px 24px;
+        gap: 36px;
+      }
+
+      .about-image img,
+      .about-video { aspect-ratio: 16/9; }
+      .about-text { max-width: 100%; }
+
+      .collection { padding: 72px 24px; }
+      .collection-grid { grid-template-columns: 1fr; }
+
+      .meaning { padding: 80px 24px; }
+      .meaning-quote-mark { font-size: 120px; margin-bottom: -40px; }
+
+      .craft {
+        grid-template-columns: 1fr;
+        padding: 72px 24px;
+        gap: 36px;
+      }
+
+      .gallery { padding: 72px 24px; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+
+      .testimonials { padding: 72px 24px; }
+
+      .size { padding: 72px 24px; }
+      .size-image { max-width: 100%; }
+      .size-image img { height: auto; }
+      .testimonial-grid { grid-template-columns: 1fr; gap: 18px; }
+
+      .footer-main {
+        grid-template-columns: 1fr 1fr;
+        padding: 48px 24px;
+        gap: 28px;
+      }
+
+      .footer-brand { grid-column: 1 / -1; }
+      .footer-bottom { flex-direction: column; gap: 14px; padding: 24px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <a href="#" class="nav-logo">
+        <img src="Logo Borabora_Transparant Background.png" alt="Borabora Daily Wear">
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#collection">Collection</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#testimonials">Testimoni</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="https://msha.ke/borabora.dailywear" class="btn-shop" target="_blank">Shop Now</a>
+      </div>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#">Home</a>
+    <a href="#collection">Collection</a>
+    <a href="#about">About</a>
+    <a href="#testimonials">Testimoni</a>
+    <a href="#contact">Contact</a>
+    <a href="https://msha.ke/borabora.dailywear" class="btn-shop" target="_blank">Shop Now</a>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" style="background: var(--bg);">
+    <div class="hero-text">
+      <p class="hero-eyebrow">Borabora Daily Wear</p>
+      <h1 class="hero-title">START YOUR DAY,<br>IN YOUR OWN WAY.</h1>
+      <p class="hero-subtitle">Karena setiap orang memiliki cara tersendiri untuk memulai hari. Borabora menciptakan pakaian yang nyaman dan tak lekang waktu, dirancang untuk setiap versi dari dirimu.</p>
+      <div class="hero-buttons">
+        <a href="#collection" class="btn-primary">Shop Collection</a>
+        <a href="#about" class="btn-secondary">Our Story</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="mr65kf32-4.png" alt="Model wearing Borabora Daily Wear collection in natural setting">
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about" id="about" style="background: var(--white);">
+    <div class="about-image reveal">
+      <video
+        class="about-video"
+        src="Everyday Comfort - Trim.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto">
+      </video>
+    </div>
+    <div class="about-text reveal">
+      <h2 class="section-title">Everyday Comfort,<br>Made Meaningful.</h2>
+      <p>Borabora Daily Wear menghadirkan pakaian yang tak lekang waktu dengan siluet sederhana, bahan yang nyaman, dan craftsmanship yang cermat.</p>
+      <br>
+      <p>Setiap koleksi dibuat bekerja sama dengan pengrajin lokal karena kami percaya bahwa setiap jahitan menyimpan cerita yang bermakna.</p>
+    </div>
+  </section>
+
+  <!-- ===== COLLECTION ===== -->
+  <section class="collection" id="collection" style="background: var(--cream);">
+    <div class="collection-header reveal">
+      <h2 class="section-title">Our Collection</h2>
+      <p class="section-subtitle" style="margin: 0 auto;">Rangkaian pakaian yang dirancang untuk kenyamananmu setiap hari.</p>
+    </div>
+
+    <div class="collection-grid">
+      <!-- Alive - Black -->
+      <div class="collection-card reveal">
+        <div class="collection-card-image">
+          <img src="mr6a7ym8-16.png" alt="Alive Collection - Black">
+          <span class="collection-badge">Alive</span>
+        </div>
+        <h3 class="collection-name">Alive</h3>
+        <div class="collection-colors">
+          <div class="color-swatch" style="background:#222222;" title="Black"></div>
+          <span class="color-label">Black</span>
+        </div>
+        <p class="collection-desc">Warna dasar yang tenang dan mudah dipadankan untuk setiap kesempatan.</p>
+        <a href="https://msha.ke/borabora.dailywear" class="collection-link" target="_blank">Shop Now →</a>
+      </div>
+
+      <!-- Alive - Dark Green -->
+      <div class="collection-card reveal">
+        <div class="collection-card-image">
+          <img src="mr6a8hvi-25.png" alt="Alive Collection - Dark Green">
+          <span class="collection-badge">Alive</span>
+        </div>
+        <h3 class="collection-name">Alive</h3>
+        <div class="collection-colors">
+          <div class="color-swatch" style="background:#1B4332;" title="Dark Green"></div>
+          <span class="color-label">Dark Green</span>
+        </div>
+        <p class="collection-desc">Warna alam yang membawa ketenangan dan energi positif setiap hari.</p>
+        <a href="https://msha.ke/borabora.dailywear" class="collection-link" target="_blank">Shop Now →</a>
+      </div>
+
+      <!-- Alive - Navy Blue -->
+      <div class="collection-card reveal">
+        <div class="collection-card-image">
+          <img src="mr6a8wbx-22.png" alt="Alive Collection - Navy Blue">
+          <span class="collection-badge">Alive</span>
+        </div>
+        <h3 class="collection-name">Alive</h3>
+        <div class="collection-colors">
+          <div class="color-swatch" style="background:#1a2744;" title="Navy Blue"></div>
+          <span class="color-label">Navy Blue</span>
+        </div>
+        <p class="collection-desc">Nyaman dipakai seharian penuh, membuatmu tetap percaya diri.</p>
+        <a href="https://msha.ke/borabora.dailywear" class="collection-link" target="_blank">Shop Now →</a>
+      </div>
+
+      <!-- Timeless - Black -->
+      <div class="collection-card reveal">
+        <div class="collection-card-image">
+          <img src="mr6a9axz-10.png" alt="Timeless Collection - Black">
+          <span class="collection-badge">Timeless</span>
+        </div>
+        <h3 class="collection-name">Timeless</h3>
+        <div class="collection-colors">
+          <div class="color-swatch" style="background:#222222;" title="Black"></div>
+          <span class="color-label">Black</span>
+        </div>
+        <p class="collection-desc">Warna klasik yang tidak lekang oleh waktu untuk setiap momen.</p>
+        <a href="https://msha.ke/borabora.dailywear" class="collection-link" target="_blank">Shop Now →</a>
+      </div>
+
+      <!-- Timeless - Maroon -->
+      <div class="collection-card reveal">
+        <div class="collection-card-image">
+          <img src="mr6a9pn7-2.png" alt="Timeless Collection - Maroon">
+          <span class="collection-badge">Timeless</span>
+        </div>
+        <h3 class="collection-name">Timeless</h3>
+        <div class="collection-colors">
+          <div class="color-swatch" style="background:#7B2D26;" title="Maroon"></div>
+          <span class="color-label">Maroon</span>
+        </div>
+        <p class="collection-desc">Sentuhan warna hangat yang mempercantik setiap penampilanmu.</p>
+        <a href="https://msha.ke/borabora.dailywear" class="collection-link" target="_blank">Shop Now →</a>
+      </div>
+
+      <!-- Timeless - Mustard Yellow -->
+      <div class="collection-card reveal">
+        <div class="collection-card-image">
+          <img src="mr6ab19z-13.png" alt="Timeless Collection - Mustard Yellow">
+          <span class="collection-badge">Timeless</span>
+        </div>
+        <h3 class="collection-name">Timeless</h3>
+        <div class="collection-colors">
+          <div class="color-swatch" style="background:#D4A017;" title="Mustard Yellow"></div>
+          <span class="color-label">Mustard Yellow</span>
+        </div>
+        <p class="collection-desc">Setiap pieces dirancang agar mudah dipadankan untuk berbagai gaya.</p>
+        <a href="https://msha.ke/borabora.dailywear" class="collection-link" target="_blank">Shop Now →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MEANING ===== -->
+  <section class="meaning">
+    <div class="meaning-inner reveal">
+      <div class="meaning-quote-mark" aria-hidden="true">"</div>
+      <blockquote>"The beauty of everyday life begins with feeling comfortable being yourself."</blockquote>
+    </div>
+  </section>
+
+  <!-- ===== CRAFT ===== -->
+  <section class="craft" id="craft" style="background: var(--white);">
+    <div class="craft-image reveal">
+      <video
+        class="craft-video"
+        src="behind the craft.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto">
+      </video>
+    </div>
+    <div class="craft-text reveal">
+      <h2 class="section-title">Behind the Craft</h2>
+      <p>Setiap helaian Borabora dibuat dengan penuh kesadaran di rumah produksi kami sendiri, memberdayakan penjahit dan komunitas lokal. Kami percaya pada dukungan terhadap kerajinan Indonesia — dari benang pertama hingga jahitan terakhir.</p>
+      <br>
+      <p>Setiap kolaborasi dengan UMKM lokal membawa dampak yang bermakna bagi keluarga dan komunitas di seluruh negeri.</p>
+    </div>
+  </section>
+
+  <!-- ===== INSTAGRAM GALLERY ===== -->
+  <section class="gallery" style="background: var(--cream);">
+    <h2 class="section-title reveal">Gallery @borabora.dailywear</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item reveal"><img src="mr6a7ym8-16.png" alt="Gallery 1"></div>
+      <div class="gallery-item reveal"><img src="mr6a8hvi-25.png" alt="Gallery 2"></div>
+      <div class="gallery-item reveal"><img src="mr6a8wbx-22.png" alt="Gallery 3"></div>
+      <div class="gallery-item reveal"><img src="mr6a9axz-10.png" alt="Gallery 4"></div>
+      <div class="gallery-item reveal"><img src="mr6a9pn7-2.png" alt="Gallery 5"></div>
+      <div class="gallery-item reveal"><img src="mr6ab19z-13.png" alt="Gallery 6"></div>
+    </div>
+    <a href="https://instagram.com/borabora.dailywear" class="btn-follow" target="_blank" aria-label="Follow Borabora Daily Wear on Instagram">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+      </svg>
+      Follow @borabora.dailywear
+    </a>
+  </section>
+
+  <!-- ===== SIZE & FIT ===== -->
+  <section class="size" style="background: var(--white);">
+    <div class="size-header reveal">
+      <h2 class="section-title">Size & Fit</h2>
+      <p class="size-desc">Setiap tubuh itu unik — dan kami merancang pakaian Borabora agar nyaman di berbagai bentuk tubuh. Berikut panduan size untuk membantumu menemukan yang paling tepat.</p>
+    </div>
+    <div class="size-image reveal">
+      <img src="Size.jpeg" alt="Borabora Size Guide">
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonials" id="testimonials" style="background: var(--cream);">
+    <h2 class="section-title reveal">What Our Customers Say</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+          <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+        </div>
+        <p class="testimonial-text">"Bahan-nya sangat nyaman dipakai seharian. Mesmo di cuaca panas Jakarta tetap adem dan percaya diri!"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">SA</div>
+          <div>
+            <p class="testimonial-name">Sarah A.</p>
+            <p class="testimonial-location">Jakarta</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+          <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+        </div>
+        <p class="testimonial-text">"Simple tapi elegan. Nggak pernah salah pilih baju dari Borabora. Cocok untuk ke kantor maupun nongkrong."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">DW</div>
+          <div>
+            <p class="testimonial-name">Diana W.</p>
+            <p class="testimonial-location">Bandung</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+          <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+        </div>
+        <p class="testimonial-text">"Love that ini buatan lokal. Kualitas nggak kalah dari brand luar negeri dan support ke komunitas kecil juga."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">RN</div>
+          <div>
+            <p class="testimonial-name">Rina N.</p>
+            <p class="testimonial-location">Yogyakarta</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta" style="background: var(--white);">
+    <div class="cta-bg"></div>
+    <div class="cta-content reveal">
+      <h2 class="section-title">Ready To Start Your Day?</h2>
+      <a href="https://msha.ke/borabora.dailywear" class="btn-primary" target="_blank">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="contact">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo">
+          <img src="Logo Borabora_Transparant Background.png" alt="Borabora Daily Wear">
+        </a>
+        <p>START YOUR DAY, IN YOUR OWN WAY. Pakaian yang nyaman, sederhana, dan autentik untuk setiap versi dirimu.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="#about">Our Story</a></li>
+          <li><a href="#craft">Our Process</a></li>
+          <li><a href="#testimonials">Testimoni</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Collection</h4>
+        <ul>
+          <li><a href="#collection">Alive</a></li>
+          <li><a href="#collection">Timeless</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="https://instagram.com/borabora.dailywear" target="_blank">Instagram</a></li>
+          <li><a href="https://www.tiktok.com/@borabora.dailywear" target="_blank">TikTok</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Store</h4>
+        <ul>
+          <li><a href="https://shopee.co.id/borabora.dailywear" target="_blank">Shopee</a></li>
+          <li><a href="https://vt.tiktok.com/ZSxwVysXJ/?page=Mall" target="_blank">TikTok Shop</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Borabora Daily Wear. All rights reserved.</p>
+      <div class="footer-socials">
+        <a href="https://instagram.com/borabora.dailywear" target="_blank">Instagram — @borabora.dailywear</a>
+        <a href="https://www.tiktok.com/@borabora.dailywear" target="_blank">TikTok — @borabora.dailywear</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    const mobileToggle = document.getElementById('mobileToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    mobileToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+      });
+    });
+
+    // Scroll reveal
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  </script>
+
+</body>
+</html>
